@@ -1,0 +1,52 @@
+<div class="container top-buffer">
+        <div class="container">
+            <h1 class="display-4">My Awesome To-do List!</h1>
+            <p class="lead">Check out my awesome list of planned tasks:</p>
+        </div>
+
+    <ul class="list-group">
+      <li class="list-group-item">
+          <div class="row" >
+            <div class="col-xs-1">
+                #
+            </div>
+              <div class="col-xs-3">
+                  Task Name
+              </div>
+              <div class="col-xs-7">
+                  Task description
+              </div>
+          </div>
+      </li>
+        <li class="list-group-item" *ngFor="let task of tasks; #i = index">
+            <div class="row" >
+              <div class="col-xs-1">
+                {{i+1}}
+              </div>
+                <div class="col-xs-3">
+                    {{task.name}}
+                </div>
+                <div class="col-xs-7">
+                    {{task.description}}
+                </div>
+            </div>
+        </li>
+        <li class="list-group-item">
+            <p *ngIf = "!validTask" class="warning">Please fill out Task Name and Task Description to add a task.</p>
+            <div class="row">
+              <div class="col-xs-1">
+                <i class="fa fa-circle-o-notch fa-spin fa-2x fa-fw"></i>
+              </div>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" placeholder="Task Name" [(ngModel)]="task.name">
+                </div>
+                <div class="col-xs-7">
+                    <input type="text" class="form-control" placeholder="Task Description" [(ngModel)]="task.description">
+                </div>
+                <span class="label label-default label-pill pull-xs-right">1</span>
+            </div>
+        </li>
+    </ul>
+    <br>
+    <button type="button" class="btn btn-primary btn-lg btn-block box" (click)="onAdd()">Add Task</button>
+</div>

@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var task_1 = require('../models/task');
+var common_1 = require('@angular/common');
 var Home = (function () {
     function Home() {
         this.tasks = [];
@@ -46,6 +47,7 @@ var Home = (function () {
     Home = __decorate([
         core_1.Component({
             selector: 'home',
+            directives: [common_1.NgClass],
             templateUrl: 'app/components/home.component.html'
         }), 
         __metadata('design:paramtypes', [])

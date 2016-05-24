@@ -21,22 +21,23 @@
         <li class="list-group-item" *ngFor="let task of tasks; let i = index">
             <div class="row">
                 <div class="col-xs-1">
-                    {{i+1}}
+                  <input type="checkbox" [(ngModel)]="task.done">
+                    &nbsp;{{i+1}}
                 </div>
                 <div class="col-xs-3">
-                    <input type="text" class="form-control no-border" placeholder="Task Name" [(ngModel)]="task.name" [class.no-border]="borderInvisible">
+                    <input type="text" class="form-control no-border" placeholder="Task Name" [(ngModel)]="task.name" [class.no-border]="borderInvisible" [ngClass]="{'strike-through': task.done}">
                 </div>
                 <div class="col-xs-6">
-                    <input type="text" class="form-control no-border" placeholder="Task Description" [(ngModel)]="task.description">
+                    <input type="text" class="form-control no-border" placeholder="Task Description" [(ngModel)]="task.description" [ngClass]="{'strike-through': task.done}">
                 </div>
 
                 <div class="col-xs-1">
-                    <i class="fa fa-minus-square fa-2x" aria-hidden="true" style="cursor:pointer" (click)="onDelete()"></i>
+                    <i class="fa fa-usd fa-2x" aria-hidden="true" style="cursor:pointer" (click)="onDelete()"></i>
                 </div>
             </div>
         </li>
         <li class="list-group-item">
-            <p *ngIf="!validTask" class="warning">Please fill out Task Name and Task Description to add a task.</p>
+            <p *ngIf="!validTask" class="alert alert-danger" role="alert">Please fill out Task Name and Task Description to add a task.</p>
             <div class="row">
                 <div class="col-xs-1">
                     <i class="fa fa-plus-circle fa-spin fa-2x fa-fw"></i>
@@ -52,5 +53,5 @@
         </li>
     </ul>
     <br>
-    <button type="button" class="btn btn-primary btn-lg btn-block box" (click)="onAdd()">Add Task</button>
+    <button type="button" class="btn btn-primary-outline btn-lg btn-block box" (click)="onAdd()">Add Task</button>
 </div>

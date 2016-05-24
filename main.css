@@ -20,3 +20,7 @@
 .no-border {
   border:0 !important;
 }
+
+.strike-through {
+    text-decoration: line-through;
+}

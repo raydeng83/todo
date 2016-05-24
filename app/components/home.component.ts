@@ -1,8 +1,10 @@
 import {Component} from '@angular/core';
 import {Task} from '../models/task';
+import {NgClass} from '@angular/common';
 
 @Component({
   selector: 'home',
+  directives: [NgClass],
   templateUrl: 'app/components/home.component.html'
 })
 export class Home {

@@ -29,6 +29,8 @@ var Home = (function () {
         this.tasks.push(this.task);
         this.task = new task_1.Task();
     };
+    Home.prototype.onEdit = function () {
+    };
     Home = __decorate([
         core_1.Component({
             selector: 'home',

@@ -25,4 +25,8 @@ export class Home {
     this.task = new Task();
   }
 
+  onEdit() {
+    
+  }
+
 }

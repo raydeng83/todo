@@ -12,7 +12,7 @@ export class Home {
   validTask: boolean = true;
   borderInvisible: boolean = true;
 
-  task: Task = new Task();
+  newTask: Task = new Task();
 
   constructor () {
     let task1 = new Task();
@@ -28,7 +28,7 @@ export class Home {
   }
 
   onAdd () {
-    if (this.task.name != null && this.task.description != null) {
+    if (this.newTask.name != null && this.newTask.name != '' && this.newTask.description != null && this.newTask.description != '') {
       this.validTask = true;
       this.addTask();
     } else {
@@ -37,8 +37,8 @@ export class Home {
   }
 
   addTask() {
-    this.tasks.push(this.task);
-    this.task = new Task();
+    this.tasks.push(this.newTask);
+    this.newTask = new Task();
   }
 
   onDelete(task: Task) {

@@ -16,7 +16,7 @@ var Home = (function () {
         this.tasks = [];
         this.validTask = true;
         this.borderInvisible = true;
-        this.task = new task_1.Task();
+        this.newTask = new task_1.Task();
         var task1 = new task_1.Task();
         var task2 = new task_1.Task();
         task1.name = "Go to gym";
@@ -29,7 +29,7 @@ var Home = (function () {
         this.tasks.push(task2);
     }
     Home.prototype.onAdd = function () {
-        if (this.task.name != null && this.task.description != null) {
+        if (this.newTask.name != null && this.newTask.name != '' && this.newTask.description != null && this.newTask.description != '') {
             this.validTask = true;
             this.addTask();
         }
@@ -38,8 +38,8 @@ var Home = (function () {
         }
     };
     Home.prototype.addTask = function () {
-        this.tasks.push(this.task);
-        this.task = new task_1.Task();
+        this.tasks.push(this.newTask);
+        this.newTask = new task_1.Task();
     };
     Home.prototype.onDelete = function (task) {
         this.tasks.splice(this.tasks.indexOf(task));

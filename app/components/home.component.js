@@ -14,7 +14,18 @@ var Home = (function () {
     function Home() {
         this.tasks = [];
         this.validTask = true;
+        this.borderInvisible = true;
         this.task = new task_1.Task();
+        var task1 = new task_1.Task();
+        var task2 = new task_1.Task();
+        task1.name = "Go to gym";
+        task1.description = "I need to workout 3 times a day to lose some pounds";
+        task1.done = false;
+        task2.name = "Read books";
+        task2.description = "One week one book";
+        task2.done = false;
+        this.tasks.push(task1);
+        this.tasks.push(task2);
     }
     Home.prototype.onAdd = function () {
         if (this.task.name != null && this.task.description != null) {
@@ -29,7 +40,8 @@ var Home = (function () {
         this.tasks.push(this.task);
         this.task = new task_1.Task();
     };
-    Home.prototype.onEdit = function () {
+    Home.prototype.onDelete = function (task) {
+        this.tasks.splice(this.tasks.indexOf(task));
     };
     Home = __decorate([
         core_1.Component({

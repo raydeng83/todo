@@ -10,12 +10,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var home_component_1 = require('./components/home.component');
+var common_1 = require('@angular/common');
 var AppComponent = (function () {
     function AppComponent() {
     }
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
+            providers: [common_1.FORM_PROVIDERS],
             directives: [home_component_1.Home],
             template: "\n    <home></home>\n  "
         }), 

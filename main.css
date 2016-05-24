@@ -16,3 +16,7 @@
     background-color: #FEEFB3;
     background-image: url('warning.png');
 }
+
+.no-border {
+  border:0 !important;
+}
